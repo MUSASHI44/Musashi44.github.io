@@ -1,68 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: white;
+    font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #121212;
-    overflow: hidden;
     flex-direction: column;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+#gameCanvas {
+    background-color: #000;
+    display: block;
 }
 
-.heart {
-    width: 150px;
-    height: 150px;
-    background-color: red;
-    position: relative;
-    transform: rotate(-45deg);
-    animation: heartbeat 1s infinite;
-}
-
-.heart::before,
-.heart::after {
-    content: '';
-    width: 150px;
-    height: 150px;
-    background-color: red;
-    border-radius: 50%;
+#messageContainer {
     position: absolute;
-}
-
-.heart::before {
-    top: -75px;
-    left: 0;
-}
-
-.heart::after {
-    top: 0;
-    left: 75px;
-}
-
-.question, .love-note, .why-note {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-top: 30px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 
-.love-note {
+#gameMessage,
+#loveQuestion {
+    font-family: 'Dancing Script', cursive;
     font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin: 0;
 }
 
-.buttons {
+.love-note,
+.why-note {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+#loveButtons {
+    margin-top: 20px;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 button {
@@ -86,28 +70,6 @@ button {
     color: white;
 }
 
-button:hover {
-    transform: scale(1.1);
-}
-
 .hidden {
     display: none;
-}
-
-@keyframes heartbeat {
-    0% {
-        transform: scale(1) rotate(-45deg);
-    }
-    25% {
-        transform: scale(1.1) rotate(-45deg);
-    }
-    50% {
-        transform: scale(1) rotate(-45deg);
-    }
-    75% {
-        transform: scale(1.1) rotate(-45deg);
-    }
-    100% {
-        transform: scale(1) rotate(-45deg);
-    }
 }
