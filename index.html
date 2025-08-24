@@ -7,34 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
-
-    <div id="messageContainer" class="hidden">
-        <p id="gameMessage"></p>
-        <p id="loveQuestion" class="hidden">wait do you love me tho??</p>
-        <div id="loveButtons" class="hidden">
+    <div class="container">
+        <div class="heart"></div>
+        <p class="question">Do you love me?</p>
+        <div class="buttons">
             <button class="yes-btn" onclick="showLoveNote()">Yes</button>
             <button class="no-btn" onclick="showWhyNote()">No</button>
         </div>
         <p class="love-note hidden">I love you so much Mia!!</p>
         <p class="why-note hidden">whyyyyyyy 😥</p>
     </div>
-
-    <script src="game.js"></script>
     <script>
         function showLoveNote() {
-            document.getElementById('messageContainer').classList.remove('hidden');
-            document.getElementById('gameMessage').classList.add('hidden');
-            document.getElementById('loveQuestion').classList.add('hidden');
-            document.getElementById('loveButtons').classList.add('hidden');
+            document.querySelector('.question').classList.add('hidden');
+            document.querySelector('.buttons').classList.add('hidden');
             document.querySelector('.love-note').classList.remove('hidden');
         }
 
         function showWhyNote() {
-            document.getElementById('messageContainer').classList.remove('hidden');
-            document.getElementById('gameMessage').classList.add('hidden');
-            document.getElementById('loveQuestion').classList.add('hidden');
-            document.getElementById('loveButtons').classList.add('hidden');
+            document.querySelector('.question').classList.add('hidden');
+            document.querySelector('.buttons').classList.add('hidden');
             document.querySelector('.why-note').classList.remove('hidden');
         }
     </script>
